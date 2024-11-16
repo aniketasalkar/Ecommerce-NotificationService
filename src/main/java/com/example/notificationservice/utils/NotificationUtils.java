@@ -37,7 +37,7 @@ public class NotificationUtils {
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailNotification.getToEmail(), false));
             Transport.send(msg);
 
-            System.out.println("EMail Sent Successfully!!");
+            System.out.println("Email Sent Successfully!!!");
         }
         catch (Exception e) {
             throw new SendEmailFailedException(e.getMessage());
