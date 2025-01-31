@@ -24,7 +24,9 @@ public class EmailNotificationConsumer implements NotificationConsumer {
 
     private static final Logger logger = LoggerFactory.getLogger(EmailNotificationConsumer.class);
 
-    @KafkaListener(topics = "welcome-email", groupId = "emailNotification")
+    @KafkaListener(
+            topics = {"welcome-email", "payment-email", "confirm-order-email", "payment-failure-email"},
+            groupId = "emailNotification")
     @Override
     public void sendWelcomeNotification(String notification) {
         EmailNotification emailNotification;
